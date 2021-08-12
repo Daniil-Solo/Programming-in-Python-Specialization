@@ -34,4 +34,4 @@ ____
 + Тесты в Python
 + Ассинхронный код с помощью библиотеки asynco
 ### 2.3. Домашние задания и проекты
-1. [Sum of digits]() - *программа выводит сумму цифр введенной последовательности цифр*
+1. [Sum of digits](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/1_Sum_of_digits.py) - *программа выводит сумму цифр введенной последовательности цифр*
