@@ -39,3 +39,4 @@ ____
 3. [Quadratic equation](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/3_Quadratic_equation.py) - *программа выводит корни квадратного уравнения по введенным целым коэффициентам*
 4. [Key-value storage](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/4_Key_value_storage.py) - *программа обеспечивает сохранение и вывод введенных значений, соответствующих введенному ключу*
 5. [Decorator to json](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/5_Decorator_to_json.py) - *декоратор для сохранения возвращаемых словарей в json-файл*
+6. [FileReader](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/6_FileReader.py) - *программа выводит содержимое файла по введенному к нему пути*
