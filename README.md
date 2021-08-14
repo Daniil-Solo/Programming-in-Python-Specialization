@@ -40,4 +40,5 @@ ____
 4. [Key-value storage](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/4_Key_value_storage.py) - *программа обеспечивает сохранение и вывод введенных значений, соответствующих введенному ключу*
 5. [Decorator to json](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/5_Decorator_to_json.py) - *декоратор для сохранения возвращаемых словарей в json-файл*
 6. [FileReader](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/6_FileReader.py) - *программа выводит содержимое файла по введенному к нему пути*
-7. [Cars](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/7_Cars.py) - *программа выводит список объектов, соответствующих классов машин, имеющих валидные данные в csv-файле*
+7. [Cars](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/7_Cars.py) - *код содержит классы машин, функцию для извлечения объектов этих классов из csv-файла с валидными и невалидными данными*
+8. [File](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/8_File.py) - *код содержит класс File, который предоставляет интерфейс для работы с txt-файлами*
