@@ -9,12 +9,12 @@ class ClientSocket(BaseSocket):
     def run(self):
         self.socket.connect((self.host, self.port))
 
-        message = input('Your message: ')
+        message = input('Request: ')
         while message != 'stop':
             self.socket.send(message.encode())
             data = self.socket.recv(1024).decode()
-            print('Received from server: ' + data)
-            message = input('Your message: ')
+            print(data)
+            message = input('Request: ')
         self.socket.close()
 
 
