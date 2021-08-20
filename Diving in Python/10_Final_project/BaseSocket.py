@@ -15,9 +15,6 @@ class BaseSocket:
     async def listen_socket(self, listened_socket=None):
         raise NotImplementedError
 
-    async def accept_sockets(self):
-        raise NotImplementedError
-
     def set_up(self):
         raise NotImplementedError
 
