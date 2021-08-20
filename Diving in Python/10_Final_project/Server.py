@@ -1,6 +1,5 @@
 import socket
 import time
-
 from BaseSocket import BaseSocket
 
 
@@ -12,24 +11,34 @@ class ServerSocket(BaseSocket):
         super().__init__(host=host, port=port)
         self.storage = dict()  # {'key': [(value, timestamp),]}
 
-    def run(self):
-        self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    def set_up(self):
         self.socket.bind((self.host, self.port))
-        self.socket.listen()
+        self.socket.listen(socket.SOMAXCONN)
+        self.socket.setblocking(False)
+        print("Server is listening")
+
+    async def send_data(self, client_socket, data):
+        await self.main_loop.sock_sendall(client_socket, data)
+
+    async def listen_socket(self, listened_socket=None):
         while True:
-            client_socket, address = self.socket.accept()
+            try:
+                request = self.main_loop.sock_recv(listened_socket, 1024).decode()
+                print('Received from client: ' + request)
+                response = self.get_response(request)
+                await self.send_data(listened_socket, response.encode())
+            except ConnectionResetError:
+                break
+
+    async def accept_sockets(self):
+        while True:
+            client_socket, address = await self.main_loop.sock_accept(self.socket)
             print('Connecting from', address)
-            while True:
-                try:
-                    request = client_socket.recv(1024).decode()
-                    if not request:
-                        break
-                    print('Received from client: ' + request)
-                    response = self.get_response(request)
-                    print()
-                    client_socket.send(response.encode())
-                except ConnectionResetError:
-                    break
+
+            self.main_loop.create_task(self.listen_socket(client_socket))
+
+    async def main(self):
+        await self.main_loop.create_task(self.accept_sockets())
 
     def get_response(self, request: str) -> str:
         try:
@@ -108,4 +117,5 @@ class ServerSocket(BaseSocket):
 
 if __name__ == "__main__":
     server = ServerSocket(port=10001)
-    server.run()
+    server.set_up()
+    server.start()

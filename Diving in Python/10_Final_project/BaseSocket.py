@@ -1,4 +1,5 @@
 import socket
+import asyncio
 
 
 class BaseSocket:
@@ -6,6 +7,22 @@ class BaseSocket:
         self.socket = socket.socket(address_family, socket_type)
         self.host = host if host else 'localhost'
         self.port = port
+        self.main_loop = asyncio.get_event_loop()
 
-    def run(self):
-        raise NotImplementedError("This function should be redefined in the descendant class!")
+    async def send_data(self, some_socket, data):
+        raise NotImplementedError
+
+    async def listen_socket(self, listened_socket=None):
+        raise NotImplementedError
+
+    async def accept_sockets(self):
+        raise NotImplementedError
+
+    def set_up(self):
+        raise NotImplementedError
+
+    async def main(self):
+        raise NotImplementedError
+
+    def start(self):
+        self.main_loop.run_until_complete(self.main())
