@@ -1,4 +1,3 @@
-import socket
 from BaseSocket import BaseSocket
 
 

@@ -8,4 +8,4 @@ class BaseSocket:
         self.port = port
 
     def run(self):
-        raise RuntimeError("This function should be redefined in the descendant class!")
+        raise NotImplementedError("This function should be redefined in the descendant class!")
