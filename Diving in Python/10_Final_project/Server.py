@@ -26,6 +26,7 @@ class ServerSocket(BaseSocket):
                         break
                     print('Received from client: ' + request)
                     response = self.get_response(request)
+                    print()
                     client_socket.send(response.encode())
                 except ConnectionResetError:
                     break
@@ -35,12 +36,14 @@ class ServerSocket(BaseSocket):
             command = request[:3]
             if command == 'get':
                 if request[4] == '*':
-                    print('key:', '*')
+                    print('Requesting all data')
                     output_data = self.get_all_data()
                 else:
                     key = request[4:-2]
-                    print('key:', key)
+                    print('Requesting data with key:', key)
                     output_data = self.get_data_with_key(key)
+                if output_data:
+                    print('Successful')
                 response = 'ok\n' + output_data + '\n'
             elif command == 'put':
                 input_data = request[4:-2]
@@ -83,7 +86,7 @@ class ServerSocket(BaseSocket):
         elif len(value_list) == 3:
             key, value, timestamp = value_list
         else:
-            print('Invalid request ' + data)
+            print('Too many or too few arguments:' + data)
             return ServerSocket.error_message
         try:
             float(value)
