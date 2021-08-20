@@ -1,5 +1,6 @@
 import socket
 import time
+import argparse
 from BaseSocket import BaseSocket
 
 
@@ -119,6 +120,10 @@ class ServerSocket(BaseSocket):
 
 
 if __name__ == "__main__":
-    server = ServerSocket(port=10001)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--host', default='localhost', type=str)
+    parser.add_argument('--port', default=10001, type=str)
+    args = parser.parse_args()
+    server = ServerSocket(host=args.host, port=args.port)
     server.set_up()
     server.start()

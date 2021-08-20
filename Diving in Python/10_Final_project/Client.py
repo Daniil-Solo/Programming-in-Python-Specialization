@@ -1,3 +1,4 @@
+import argparse
 import asyncio
 
 from BaseSocket import BaseSocket
@@ -33,6 +34,10 @@ class ClientSocket(BaseSocket):
 
 
 if __name__ == "__main__":
-    client = ClientSocket(host='localhost', port=10001)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--host', default='localhost', type=str)
+    parser.add_argument('--port', default=10001, type=str)
+    args = parser.parse_args()
+    client = ClientSocket(host=args.host, port=args.port)
     client.set_up()
     client.start()
