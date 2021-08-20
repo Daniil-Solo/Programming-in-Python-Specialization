@@ -23,11 +23,14 @@ class ServerSocket(BaseSocket):
     async def listen_socket(self, listened_socket=None):
         while True:
             try:
-                request = self.main_loop.sock_recv(listened_socket, 1024).decode()
+                request = await self.main_loop.sock_recv(listened_socket, 1024)
+                request = request.decode()
                 print('Received from client: ' + request)
                 response = self.get_response(request)
                 await self.send_data(listened_socket, response.encode())
             except ConnectionResetError:
+                break
+            except ConnectionAbortedError:
                 break
 
     async def accept_sockets(self):
