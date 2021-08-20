@@ -1,15 +1,16 @@
 import socket
+import time
+
 from BaseSocket import BaseSocket
 
 
 class ServerSocket(BaseSocket):
-
     error_message = "error\nwrong command\n\n"
     ok_message = "ok\n\n"
 
     def __init__(self, host=None, port=None):
         super().__init__(host=host, port=port)
-        self.storage = dict() # {'key': [(value, timestamp),]}
+        self.storage = dict()  # {'key': [(value, timestamp),]}
 
     def run(self):
         self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -34,22 +35,23 @@ class ServerSocket(BaseSocket):
             command = request[:3]
             if command == 'get':
                 if request[4] == '*':
+                    print('key:', '*')
                     output_data = self.get_all_data()
                 else:
                     key = request[4:-2]
+                    print('key:', key)
                     output_data = self.get_data_with_key(key)
                 response = 'ok\n' + output_data + '\n'
-
             elif command == 'put':
                 input_data = request[4:-2]
                 response = self.save_input_data(input_data)
             else:
                 print('Unknown command ' + command)
                 response = ServerSocket.error_message
+            return response
         except IndexError:
             print('Too short request ' + request)
-            response = ServerSocket.error_message
-        return response
+            return ServerSocket.error_message
 
     def get_all_data(self) -> str:
         response = ''
@@ -63,7 +65,7 @@ class ServerSocket(BaseSocket):
         try:
             values = self.storage[key]
             for value, timestamp in values:
-                key_data += ' '.join([key, value, timestamp])
+                key_data += ' '.join([key, value, timestamp]) + '\n'
         except KeyError:
             print('Non-existing key ' + key)
         finally:
@@ -71,10 +73,18 @@ class ServerSocket(BaseSocket):
 
     def save_input_data(self, data: str) -> str:
         try:
-            key, value, timestamp = data.split(' ')
+            value_list = data.split(' ')
         except ValueError:
             print('Invalid request ' + data)
-            return ServerSocket.ok_message
+            return ServerSocket.error_message
+        if len(value_list) == 2:
+            key, value = value_list[0:2]
+            timestamp = str(int(time.time()))
+        elif len(value_list) == 3:
+            key, value, timestamp = value_list
+        else:
+            print('Invalid request ' + data)
+            return ServerSocket.error_message
         try:
             float(value)
         except ValueError:
@@ -89,6 +99,7 @@ class ServerSocket(BaseSocket):
             self.storage[key].append((value, timestamp))
         else:
             self.storage[key] = [(value, timestamp)]
+        print('Saving:', key, value, timestamp)
         return ServerSocket.ok_message
 
 
