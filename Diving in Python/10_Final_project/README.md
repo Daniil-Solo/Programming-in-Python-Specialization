@@ -66,7 +66,7 @@ wrong command\n
 - Сервер умеет обрабатывать некорректные запросы.
 ## **7. Стек**
 - Python 3.9.5
-- socket, asyncio, time
+- socket, asyncio, time, argparse
 ## **8. Запуск на Windows10**
 1. Скачиваем файлы **BaseSocket**, **Client**, **Server** в одну папку
 2. Открываем в этой папке командную строку
