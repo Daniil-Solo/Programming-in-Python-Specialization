@@ -11,6 +11,7 @@ class ServerSocket(BaseSocket):
     def __init__(self, host=None, port=None):
         super().__init__(host=host, port=port)
         self.storage = dict()  # {'key': [(value, timestamp),]}
+        self.users = dict()  # {hash(socket): address}
 
     def set_up(self):
         self.socket.bind((self.host, self.port))
@@ -30,6 +31,8 @@ class ServerSocket(BaseSocket):
                 response = self.get_response(request)
                 await self.send_data(listened_socket, response.encode())
             except ConnectionResetError:
+                print("The client", self.users[hash(listened_socket)], "disconnected")
+                del self.users[hash(listened_socket)]
                 break
             except ConnectionAbortedError:
                 break
@@ -38,7 +41,7 @@ class ServerSocket(BaseSocket):
         while True:
             client_socket, address = await self.main_loop.sock_accept(self.socket)
             print('Connecting from', address)
-
+            self.users[hash(client_socket)] = address
             self.main_loop.create_task(self.listen_socket(client_socket))
 
     async def main(self):

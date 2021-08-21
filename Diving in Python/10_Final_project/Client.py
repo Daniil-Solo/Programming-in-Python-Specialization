@@ -9,8 +9,12 @@ class ClientSocket(BaseSocket):
         super().__init__(host=host, port=port)
 
     def set_up(self):
-        self.socket.connect((self.host, self.port))
-        self.socket.setblocking(False)
+        try:
+            self.socket.connect((self.host, self.port))
+            self.socket.setblocking(False)
+        except ConnectionRefusedError:
+            print("Server is offline")
+            exit(-1)
 
     async def listen_socket(self, listened_socket=None):
         while True:
@@ -22,9 +26,9 @@ class ClientSocket(BaseSocket):
         while True:
             data = await self.main_loop.run_in_executor(None, input)
             if data == "stop":
-                self.main_loop.stop()
                 self.socket.close()
-                return
+                print("Connection terminated")
+                exit(-1)
             await self.main_loop.sock_sendall(self.socket, data.encode())
 
     async def main(self):
