@@ -22,8 +22,8 @@ ____
 + Основные конструкции, базовые типы, коллекции в Python
 + Функции, декораторы, функциональное программирование в Python
 + ООП, исключения, магические методы, итераторы, дескрипторы в Python
-+ Тесты в Python
-+ Ассинхронный код с помощью библиотеки asynco
++ Ассинхронная программа на Python
++ Библиотеки: os, sys, argparse, tempfile, time, json, csv, asyncio
 ### 2.3. Домашние задания и проекты
 1. [Sum of digits](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/1_Sum_of_digits.py) - *программа выводит сумму цифр введенной последовательности цифр*
 2. [Printing the ladder](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/2_Printing_the_ladder.py) - *программа выводит лесенку из # по введенному количеству ступенек*
