@@ -5,9 +5,6 @@ from BaseSocket import BaseSocket
 
 
 class ServerSocket(BaseSocket):
-    error_message = "error\nwrong command\n\n"
-    ok_message = "ok\n\n"
-
     def __init__(self, host=None, port=None):
         super().__init__(host=host, port=port)
         self.storage = dict()  # {'key': [(value, timestamp),]}
@@ -28,7 +25,7 @@ class ServerSocket(BaseSocket):
                 request = await self.main_loop.sock_recv(listened_socket, 1024)
                 request = request.decode()
                 print('Received from client: ' + request)
-                response = self.get_response(request)
+                response = RequestHandler(self.storage).get_response(request)
                 await self.send_data(listened_socket, response.encode())
             except ConnectionResetError:
                 print("The client", self.users[hash(listened_socket)], "disconnected")
@@ -46,6 +43,14 @@ class ServerSocket(BaseSocket):
 
     async def main(self):
         await self.main_loop.create_task(self.accept_sockets())
+
+
+class RequestHandler:
+    error_message = "error\nwrong command\n\n"
+    ok_message = "ok\n\n"
+
+    def __init__(self, storage):
+        self.storage = storage
 
     def get_response(self, request: str) -> str:
         try:
@@ -66,11 +71,11 @@ class ServerSocket(BaseSocket):
                 response = self.save_input_data(input_data)
             else:
                 print('Unknown command ' + command)
-                response = ServerSocket.error_message
+                response = RequestHandler.error_message
             return response
         except IndexError:
             print('Too short request ' + request)
-            return ServerSocket.error_message
+            return RequestHandler.error_message
 
     def get_all_data(self) -> str:
         response = ''
@@ -95,7 +100,7 @@ class ServerSocket(BaseSocket):
             value_list = data.split(' ')
         except ValueError:
             print('Invalid request ' + data)
-            return ServerSocket.error_message
+            return RequestHandler.error_message
         if len(value_list) == 2:
             key, value = value_list[0:2]
             timestamp = str(int(time.time()))
@@ -103,23 +108,23 @@ class ServerSocket(BaseSocket):
             key, value, timestamp = value_list
         else:
             print('Too many or too few arguments:' + data)
-            return ServerSocket.error_message
+            return RequestHandler.error_message
         try:
             float(value)
         except ValueError:
             print('Invalid value ' + value)
-            return ServerSocket.error_message
+            return RequestHandler.error_message
         try:
             int(timestamp)
         except ValueError:
             print('Invalid timestamp' + timestamp)
-            return ServerSocket.error_message
+            return RequestHandler.error_message
         if key in self.storage:
             self.storage[key].append((value, timestamp))
         else:
             self.storage[key] = [(value, timestamp)]
         print('Saving:', key, value, timestamp)
-        return ServerSocket.ok_message
+        return RequestHandler.ok_message
 
 
 if __name__ == "__main__":
