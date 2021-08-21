@@ -34,3 +34,4 @@ ____
 7. [Cars](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/7_Cars.py) - *код содержит классы машин, функцию для извлечения объектов этих классов из csv-файла с валидными и невалидными данными*
 8. [File](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/8_File.py) - *код содержит класс File, который предоставляет интерфейс для работы с txt-файлами*
 9. [Descriptor with comission](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/9_Descriptor_with_commission.py) - *код содержит класс дескриптора для вычета комиссии из установленного значения суммы*
+10. [Metrics collection and storage system](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/Diving%20in%20Python/10_Final_project) - *ассинхронный сервер для хранения метрик и ассинхронный клиент для отправки метрик*
