@@ -9,7 +9,7 @@
 - **E-LEARNING DEVELOPMENT FUND**
 ### 1.3. Состав специализации
 1. [**Погружение в Python**](#diving_in_python)([Ссылка на курс](https://www.coursera.org/learn/diving-in-python?specialization=programming-in-python))
-2. **ООП и паттерны проектирования в Python**
+2. [**ООП и паттерны проектирования в Python**](#oop_and_pattern)([Ссылка на курс](https://www.coursera.org/learn/oop-patterns-python))
 3. **Создание Web-сервисов на Python**
 4. **Python для анализа данных**
 ### 1.3. Описание программы
@@ -35,3 +35,10 @@ ____
 8. [File](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/8_File.py) - *код содержит класс File, который предоставляет интерфейс для работы с txt-файлами*
 9. [Descriptor with comission](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/9_Descriptor_with_commission.py) - *код содержит класс дескриптора для вычета комиссии из установленного значения суммы*
 10. [Metrics collection and storage system](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/Diving%20in%20Python/10_Final_project) - *ассинхронный сервер для хранения метрик и ассинхронный клиент для отправки метрик*
+## **3. ООП и паттерны проектирования в Python** <a name="oop_and_pattern"></a>
+### 2.1. Описание программы
+> Курс возводит слушателя от написания простых конкретных классов к профессиональному конструированию приложения в объектно-ориентированной парадигме. Паттерны проектирования позволяют шагнуть за пределы простого использования синтаксических конструкций языка. Вы научитесь писать красиво и элегантно, будете использовать проверенные временем концепции и создавать масштабируемые программы.
+### 2.2. Получаемые знания и навыки
+пока нет информации
+### 2.3. Домашние задания и проекты
+пока нет информации
