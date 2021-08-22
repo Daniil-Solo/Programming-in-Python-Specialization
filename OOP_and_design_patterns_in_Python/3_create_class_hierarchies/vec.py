@@ -19,4 +19,4 @@ class Vec2d:
         return math.sqrt(self.x ** 2 + self.y ** 2)
 
     def int_pair(self):
-        return self.x, self.y
+        return int(self.x), int(self.y)
