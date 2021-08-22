@@ -4,13 +4,15 @@ from knot import Knot
 
 
 SCREEN_DIM = (800, 600)
+
+
 def draw_help():
     """функция отрисовки экрана справки программы"""
     gameDisplay.fill((50, 50, 50))
     font1 = pygame.font.SysFont("courier", 24)
     font2 = pygame.font.SysFont("serif", 24)
     data = []
-    data.append(["F1", "Show Help"])
+    data.append(["H", "Show Help"])
     data.append(["R", "Restart"])
     data.append(["P", "Pause/Play"])
     data.append(["Num+", "More points"])
@@ -52,17 +54,20 @@ if __name__ == "__main__":
                     knot.reset()
                 if event.key == pygame.K_p:
                     pause = not pause
-                if event.key == pygame.K_KP_PLUS:
+                if event.key == pygame.K_PLUS:
                     steps += 1
-                if event.key == pygame.K_F1:
+                if event.key == pygame.K_h:
                     show_help = not show_help
-                if event.key == pygame.K_KP_MINUS:
+                if event.key == pygame.K_MINUS:
                     steps -= 1 if steps > 1 else 0
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 point = event.pos
                 speed = (random.random() * 2, random.random() * 2)
                 knot.add_point(point, speed)
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 3:
+                point = event.pos
+                knot.delete_point(point)
 
         gameDisplay.fill((0, 0, 0))
         hue = (hue + 1) % 360

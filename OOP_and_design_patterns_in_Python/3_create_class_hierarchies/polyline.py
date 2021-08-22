@@ -17,6 +17,14 @@ class Polyline:
         vec_sped = Vec2d(x_speed, y_speed)
         self.speeds.append(vec_sped)
 
+    def delete_point(self, point, area=3):
+        target = Vec2d(point[0], point[1])
+        for p, i in zip(self.points, range(len(self.points))):
+            if (target.x - area <= p.x <= target.x + area) and (target.y - area <= p.y <= target.y + area):
+                self.points.remove(self.points[i])
+                self.speeds.remove(self.speeds[i])
+                return
+
     def set_points(self):
         for p in range(len(self.points)):
             self.points[p] = self.points[p] + self.speeds[p]
