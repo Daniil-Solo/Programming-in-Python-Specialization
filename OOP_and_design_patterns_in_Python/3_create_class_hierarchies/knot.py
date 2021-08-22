@@ -31,3 +31,7 @@ class Knot(Polyline):
         if deg == 0:
             return points[0]
         return (points[deg] * alpha) + (self.get_point(points, alpha, deg - 1) * (1-alpha))
+
+    def speed_change(self, koef):
+        for i in range(len(self.speeds)):
+            self.speeds[i] *= koef

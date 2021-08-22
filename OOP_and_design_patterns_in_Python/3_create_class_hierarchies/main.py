@@ -4,6 +4,8 @@ from knot_control import KnotController
 
 
 SCREEN_DIM = (800, 600)
+SPEED_UP = 1.3
+SPEED_DOWN = 0.7
 
 
 def draw_help():
@@ -12,11 +14,16 @@ def draw_help():
     font1 = pygame.font.SysFont("courier", 24)
     font2 = pygame.font.SysFont("serif", 24)
     data = []
+    data.append(["LClick", "Add new point"])
+    data.append(["RClick", "Delete this point"])
     data.append(["H", "Show Help"])
     data.append(["R", "Restart"])
     data.append(["P", "Pause/Play"])
-    data.append(["Num+", "More points"])
-    data.append(["Num-", "Less points"])
+    data.append(["+", "More points"])
+    data.append(["-", "Less points"])
+    data.append(["Up", "More Speed"])
+    data.append(["Down", "Less Speed"])
+    data.append(["Space", "New figure"])
     data.append(["", ""])
     data.append([str(steps), "Current points"])
 
@@ -62,6 +69,10 @@ if __name__ == "__main__":
                     steps -= 1 if steps > 1 else 0
                 if event.key == pygame.K_SPACE:
                     k_controller.add_new()
+                if event.key == pygame.K_UP:
+                    k_controller.current_knot().speed_change(koef=SPEED_UP)
+                if event.key == pygame.K_DOWN:
+                    k_controller.current_knot().speed_change(koef=SPEED_DOWN)
 
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 point = event.pos

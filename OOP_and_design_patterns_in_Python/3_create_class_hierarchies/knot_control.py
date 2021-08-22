@@ -6,9 +6,19 @@ class KnotController:
         self.screen_dim = screen_dim
         self.knots = [Knot(self.screen_dim)]
         self.current = 0
+        self.remove_knots = []
 
     def add_new(self):
+        self.remove_empty_knots()
         self.knots.append(Knot(self.screen_dim))
+
+    def remove_empty_knots(self):
+        for knot in self.knots:
+            if not len(knot.points):
+                self.remove_knots.append(knot)
+        for knot in self.remove_knots:
+            self.knots.remove(knot)
+        self.remove_knots = []
 
     def current_knot(self):
         return self.knots[-1]
