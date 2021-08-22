@@ -44,4 +44,4 @@ ____
 ### 2.3. Домашние задания и проекты
 1. [Unittests for factorize-function](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/1_factorize_unittest/test_factorize.py) - *код содержит класс для юниттестов функции, возвращающей множители числа*
 2. [Creating base class](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/2_create_base_class) - *код содержит базовый класс и обновленные классы-потомки*
-3. [Creating class hierarchies]((https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/3_create_class_hierarchies) - *код содержит результаты перехода программы с процедурного стиля на ООП*
+3. [Creating class hierarchies](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/3_create_class_hierarchies) - *код содержит результаты перехода программы с процедурного стиля на ООП*
