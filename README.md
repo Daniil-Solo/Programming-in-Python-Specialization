@@ -39,7 +39,8 @@ ____
 ### 2.1. Описание программы
 > Курс возводит слушателя от написания простых конкретных классов к профессиональному конструированию приложения в объектно-ориентированной парадигме. Паттерны проектирования позволяют шагнуть за пределы простого использования синтаксических конструкций языка. Вы научитесь писать красиво и элегантно, будете использовать проверенные временем концепции и создавать масштабируемые программы.
 ### 2.2. Получаемые знания и навыки
-+ Структурное программирование
-+ Библиотеки: unittest 
++ Структурное программирование, OOP, SOLID
++ Библиотеки: unittest, PyContracts
 ### 2.3. Домашние задания и проекты
 1. [Unittests for factorize-function](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/1_factorize_unittest/test_factorize.py) - *код содержит класс для юниттестов функции, возвращающей множители числа*
+1. [Creating base class](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/2_create_base_class) - *код содержит базовый класс и классы-потомки, добавлена аннотация типов с PyContracts*
