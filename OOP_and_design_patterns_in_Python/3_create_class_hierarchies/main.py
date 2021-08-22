@@ -1,6 +1,6 @@
 import pygame
 import random
-from knot import Knot
+from knot_control import KnotController
 
 
 SCREEN_DIM = (800, 600)
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     working = True
     show_help = False
     pause = True
-    knot = Knot([], [], SCREEN_DIM)
+    k_controller = KnotController(SCREEN_DIM)
 
     hue = 0
     color = pygame.Color(0)
@@ -51,7 +51,7 @@ if __name__ == "__main__":
                 if event.key == pygame.K_ESCAPE:
                     working = False
                 if event.key == pygame.K_r:
-                    knot.reset()
+                    k_controller.reset()
                 if event.key == pygame.K_p:
                     pause = not pause
                 if event.key == pygame.K_PLUS:
@@ -60,22 +60,27 @@ if __name__ == "__main__":
                     show_help = not show_help
                 if event.key == pygame.K_MINUS:
                     steps -= 1 if steps > 1 else 0
+                if event.key == pygame.K_SPACE:
+                    k_controller.add_new()
 
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 point = event.pos
                 speed = (random.random() * 2, random.random() * 2)
-                knot.add_point(point, speed)
+                k_controller.current_knot().add_point(point, speed)
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 3:
                 point = event.pos
-                knot.delete_point(point)
+                for knot in k_controller:
+                    knot.delete_point(point)
 
         gameDisplay.fill((0, 0, 0))
         hue = (hue + 1) % 360
         color.hsla = (hue, 100, 50, 100)
-        knot.draw_points(game_display=gameDisplay)
-        knot.draw_lines(line_points=knot.get_knot(steps), game_display=gameDisplay, color=color)
+        for knot in k_controller:
+            knot.draw_points(game_display=gameDisplay)
+            knot.draw_lines(line_points=knot.get_knot(steps), game_display=gameDisplay, color=color)
         if not pause:
-            knot.set_points()
+            for knot in k_controller:
+                knot.set_points()
         if show_help:
             draw_help()
 

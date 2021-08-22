@@ -4,9 +4,9 @@ from vec import Vec2d
 
 
 class Polyline:
-    def __init__(self, points, speeds, screen_dim):
-        self.points = points
-        self.speeds = speeds
+    def __init__(self, screen_dim):
+        self.points = []
+        self.speeds = []
         self.width, self.height = screen_dim
 
     def add_point(self, point, speed):

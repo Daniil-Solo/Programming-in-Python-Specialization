@@ -2,8 +2,8 @@ from polyline import Polyline
 
 
 class Knot(Polyline):
-    def __init__(self, points, speeds, screen_dim):
-        super().__init__(points, speeds, screen_dim)
+    def __init__(self, screen_dim):
+        super().__init__(screen_dim)
 
     def get_knot(self, count):
         if len(self.points) < 3:
