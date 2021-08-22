@@ -4,9 +4,10 @@ from vec import Vec2d
 
 
 class Polyline:
-    def __init__(self, points, speeds):
+    def __init__(self, points, speeds, screen_dim):
         self.points = points
         self.speeds = speeds
+        self.width, self.height = screen_dim
 
     def add_point(self, point, speed):
         x, y = point
@@ -16,13 +17,12 @@ class Polyline:
         vec_sped = Vec2d(x_speed, y_speed)
         self.speeds.append(vec_sped)
 
-    def set_points(self, screed_dim):
-        width, height = screed_dim
+    def set_points(self):
         for p in range(len(self.points)):
             self.points[p] = self.points[p] + self.speeds[p]
-            if self.points[p].x > width or self.points[p].x < 0:
+            if self.points[p].x > self.width or self.points[p].x < 0:
                 self.speeds[p] = Vec2d(-self.speeds[p].x, self.speeds[p].y)
-            if self.points[p].y > height or self.points[p].y < 0:
+            if self.points[p].y > self.height or self.points[p].y < 0:
                 self.speeds[p] = Vec2d(self.speeds[p].x, -self.speeds[p].y)
 
     def draw_lines(self, line_points, game_display, width=3, color=(255, 255, 255)):
@@ -32,3 +32,7 @@ class Polyline:
     def draw_points(self, game_display, width=3, color=(255, 255, 255)):
         for p in self.points:
             pygame.draw.circle(game_display, color, p.int_pair(), width)
+
+    def reset(self):
+        self.points = []
+        self.speeds = []
