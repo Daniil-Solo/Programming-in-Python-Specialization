@@ -1,10 +1,10 @@
 import math
+from base_class import Base
 
 
-class A:
+class A(Base):
     def __init__(self, data, result):
-        self.data = data
-        self.result = result
+        super().__init__(data, result)
 
     def get_answer(self):
         return [int(x >= 0.5) for x in self.data]
@@ -19,10 +19,9 @@ class A:
             [(x - y) * (x - y) for (x, y) in zip(self.data, self.result)])
 
 
-class B:
+class B(Base):
     def __init__(self, data, result):
-        self.data = data
-        self.result = result
+        super().__init__(data, result)
 
     def get_answer(self):
         return [int(x >= 0.5) for x in self.data]
@@ -49,10 +48,9 @@ class B:
         return 2 * pre * rec / (pre + rec)
 
 
-class C:
+class C(Base):
     def __init__(self, data, result):
-        self.data = data
-        self.result = result
+        super().__init__(data, result)
 
     def get_answer(self):
         return [int(x >= 0.5) for x in self.data]
