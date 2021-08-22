@@ -1,8 +1,8 @@
 class Base:
-    def __init__(self, data, result, loss_function):
+    def __init__(self, data, result):
         self.data = data
         self.result = result
-        self.loss_function = loss_function
+        self.loss_function = None
 
     def get_answer(self):
         return [int(x >= 0.5) for x in self.data]

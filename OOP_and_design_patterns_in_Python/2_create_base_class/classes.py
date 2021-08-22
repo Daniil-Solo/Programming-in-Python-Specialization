@@ -3,9 +3,9 @@ from base_class import Base
 
 
 class A(Base):
-    def __init__(self, data, result,
-                 loss_function=lambda x, y: (x - y) * (x - y)):
-        super().__init__(data, result, loss_function)
+    def __init__(self, data, result):
+        super().__init__(data, result)
+        self.loss_function = lambda x, y: (x - y) * (x - y)
 
     def get_score(self):
         ans = self.get_answer()
@@ -13,9 +13,9 @@ class A(Base):
 
 
 class B(Base):
-    def __init__(self, data, result,
-                 loss_function=lambda x, y: -(y * math.log(x) + (1 - y) * math.log(1 - x))):
-        super().__init__(data, result, loss_function)
+    def __init__(self, data, result):
+        super().__init__(data, result)
+        self.loss_function = lambda x, y: -(y * math.log(x) + (1 - y) * math.log(1 - x))
 
     def get_pre(self):
         ans = self.get_answer()
@@ -34,9 +34,9 @@ class B(Base):
 
 
 class C(Base):
-    def __init__(self, data, result,
-                 loss_function=lambda x, y: abs(x - y)):
-        super().__init__(data, result, loss_function)
+    def __init__(self, data, result):
+        super().__init__(data, result)
+        self.loss_function = lambda x, y: abs(x - y)
 
     def get_score(self):
         ans = self.get_answer()
