@@ -6,6 +6,7 @@ class Knot(Polyline):
         super().__init__(screen_dim)
 
     def get_knot(self, count):
+        """функция возвращения точек для рисования линий"""
         if len(self.points) < 3:
             return []
         res = []
@@ -19,6 +20,7 @@ class Knot(Polyline):
         return res
 
     def get_points(self, base_points, count):
+        """функция возвращения точек"""
         alpha = 1 / count
         res = []
         for i in range(count):
@@ -26,6 +28,7 @@ class Knot(Polyline):
         return res
 
     def get_point(self, points, alpha, deg=None):
+        """функция возвращения точки"""
         if deg is None:
             deg = len(points) - 1
         if deg == 0:
@@ -33,5 +36,6 @@ class Knot(Polyline):
         return (points[deg] * alpha) + (self.get_point(points, alpha, deg - 1) * (1-alpha))
 
     def speed_change(self, koef):
+        """функция изменения скорости текущих точек"""
         for i in range(len(self.speeds)):
             self.speeds[i] *= koef

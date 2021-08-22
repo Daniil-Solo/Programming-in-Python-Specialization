@@ -10,6 +10,7 @@ class Polyline:
         self.width, self.height = screen_dim
 
     def add_point(self, point, speed):
+        """функция добавления точек"""
         x, y = point
         vec = Vec2d(x, y)
         self.points.append(vec)
@@ -18,6 +19,7 @@ class Polyline:
         self.speeds.append(vec_sped)
 
     def delete_point(self, point, area=3):
+        """функция удаления точек"""
         target = Vec2d(point[0], point[1])
         for p, i in zip(self.points, range(len(self.points))):
             if (target.x - area <= p.x <= target.x + area) and (target.y - area <= p.y <= target.y + area):
@@ -26,6 +28,7 @@ class Polyline:
                 return
 
     def set_points(self):
+        """функция перерасчета координат опорных точек"""
         for p in range(len(self.points)):
             self.points[p] = self.points[p] + self.speeds[p]
             if self.points[p].x > self.width or self.points[p].x < 0:
@@ -34,13 +37,11 @@ class Polyline:
                 self.speeds[p] = Vec2d(self.speeds[p].x, -self.speeds[p].y)
 
     def draw_lines(self, line_points, game_display, width=3, color=(255, 255, 255)):
+        """функция рисования линий"""
         for p_n in range(-1, len(line_points) - 1):
             pygame.draw.line(game_display, color, line_points[p_n].int_pair(), line_points[p_n + 1].int_pair(), width)
 
     def draw_points(self, game_display, width=3, color=(255, 255, 255)):
+        """функция рисования опорных точек"""
         for p in self.points:
             pygame.draw.circle(game_display, color, p.int_pair(), width)
-
-    def reset(self):
-        self.points = []
-        self.speeds = []
