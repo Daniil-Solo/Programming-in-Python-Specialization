@@ -1,5 +1,6 @@
 from hero import Hero
-from positive_classes import Berserk, Blessing, Weakness
+from positive_classes import Berserk, Blessing
+from negative_classes import Weakness, EvilEye, Curse
 
 
 if __name__ == '__main__':
@@ -7,6 +8,11 @@ if __name__ == '__main__':
     print(hero.get_stats())
     print(hero.get_positive_effects())
 
-    hero = Weakness(Blessing(Berserk(hero)))
+    hero = Curse(hero)
+    hero = Curse(hero)
+    hero = Curse(hero)
+    hero = Curse(hero)
+    hero = Curse(hero)
     print(hero.get_stats())
     print(hero.get_positive_effects())
+    print(hero.get_negative_effects())

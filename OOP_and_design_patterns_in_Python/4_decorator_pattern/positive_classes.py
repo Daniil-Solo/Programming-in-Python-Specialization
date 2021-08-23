@@ -9,6 +9,9 @@ class AbstractPositive:
         previous_effects.append(self.name)
         return previous_effects
 
+    def get_negative_effects(self):
+        return self.base.get_negative_effects()
+
     def get_stats(self):
         current_stats = self.base.get_stats()
         for stat_key in self.changing_stats.keys():
@@ -50,15 +53,3 @@ class Blessing(AbstractPositive):
 
     def __init__(self, base):
         super().__init__(base, Blessing.name, Blessing.changing_stats)
-
-
-class Weakness(AbstractPositive):
-    name = "Weakness"
-    changing_stats = {
-        "Strength": 4,  # сила
-        "Endurance": 4,  # выносливость
-        "Agility": 4,  # ловкость
-    }
-
-    def __init__(self, base):
-        super().__init__(base, Weakness.name, Weakness.changing_stats)
