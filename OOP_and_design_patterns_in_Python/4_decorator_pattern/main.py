@@ -7,12 +7,12 @@ if __name__ == '__main__':
     hero = Hero()
     print(hero.get_stats())
     print(hero.get_positive_effects())
+    print(hero.get_negative_effects())
 
-    hero = Curse(hero)
-    hero = Curse(hero)
-    hero = Curse(hero)
-    hero = Curse(hero)
-    hero = Curse(hero)
+    brs1 = Berserk(hero)
+    brs2 = Blessing(brs1)
+    cur1 = Curse(brs2)
+    hero = cur1
     print(hero.get_stats())
     print(hero.get_positive_effects())
     print(hero.get_negative_effects())

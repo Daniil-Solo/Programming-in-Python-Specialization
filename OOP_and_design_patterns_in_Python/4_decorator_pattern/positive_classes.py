@@ -1,22 +1,14 @@
-class AbstractPositive:
+from absctract_effect import AbstractEffect
+
+
+class AbstractPositive(AbstractEffect):
     def __init__(self, base, name, changing_stats):
-        self.base = base
-        self.name = name
-        self.changing_stats = changing_stats
+        super().__init__(base, name, changing_stats)
 
     def get_positive_effects(self):
         previous_effects = self.base.get_positive_effects()
         previous_effects.append(self.name)
         return previous_effects
-
-    def get_negative_effects(self):
-        return self.base.get_negative_effects()
-
-    def get_stats(self):
-        current_stats = self.base.get_stats()
-        for stat_key in self.changing_stats.keys():
-            current_stats[stat_key] += self.changing_stats[stat_key]
-        return current_stats
 
 
 class Berserk(AbstractPositive):
