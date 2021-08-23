@@ -6,7 +6,7 @@ class AbstractPositive(AbstractEffect):
         super().__init__(base, name, changing_stats)
 
     def get_positive_effects(self):
-        previous_effects = self.base.get_positive_effects()
+        previous_effects = super().get_positive_effects()
         previous_effects.append(self.name)
         return previous_effects
 

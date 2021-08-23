@@ -1,4 +1,7 @@
-class Hero:
+from abstract_hero import AbstractHero
+
+
+class Hero(AbstractHero):
     def __init__(self):
         self.positive_effects = []
         self.negative_effects = []

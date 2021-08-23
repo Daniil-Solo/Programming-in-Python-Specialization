@@ -1,8 +1,7 @@
-from abc import ABC
-from hero import Hero
+from abstract_hero import AbstractHero
 
 
-class AbstractEffect(Hero, ABC):
+class AbstractEffect(AbstractHero):
     def __init__(self, base, name, changing_stats):
         super().__init__()
         self.base = base
