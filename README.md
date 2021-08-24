@@ -46,3 +46,4 @@ ____
 2. [Creating base class](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/2_create_base_class) - *код содержит базовый класс и обновленные классы-потомки*
 3. [Creating class hierarchies](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/3_create_class_hierarchies) - *код содержит результаты перехода программы с процедурного стиля на ООП*
 4. [Pattern Decorator](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/4_decorator_pattern) - *код содержит результаты использования паттерна Декоратор*
+5. [Pattern Adapter](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/5_adapter_pattern) - *код содержит результаты использования паттерна Адаптер*
