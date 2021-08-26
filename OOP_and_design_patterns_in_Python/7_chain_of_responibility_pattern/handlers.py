@@ -1,4 +1,4 @@
-from events import SetEvent, GetEvent
+from events import EventSet, EventGet
 
 
 class NullHandler:
@@ -6,35 +6,38 @@ class NullHandler:
         self.next_handler = next_handler
 
     def handle(self, obj, event):
-        if not self.next_handler:
-            self.next_handler.hanle(obj, event)
+        if self.next_handler is not None:
+            return self.next_handler.handle(obj, event)
 
 
 class IntHandler(NullHandler):
     def handle(self, obj, event):
-        if isinstance(event, SetEvent) and type(event.value_or_type) is int:
+        if isinstance(event, EventSet) and type(event.value_or_type) is int:
             obj.integer_field = event.value_or_type
-        elif isinstance(event, GetEvent) and event.value_or_type is int:
-            return event.value_or_type
+        elif isinstance(event, EventGet) and event.value_or_type is int:
+            return obj.integer_field
         else:
-            super().handle(obj, event)
+            # print("Передаю на выполнение ", type(self.next_handler))
+            return super().handle(obj, event)
 
 
 class FloatHandler(NullHandler):
     def handle(self, obj, event):
-        if isinstance(event, SetEvent) and type(event.value_or_type) is float:
+        if isinstance(event, EventSet) and type(event.value_or_type) is float:
             obj.float_field = event.value_or_type
-        elif isinstance(event, GetEvent) and event.value_or_type is float:
-            return event.value_or_type
+        elif isinstance(event, EventGet) and event.value_or_type is float:
+            return obj.float_field
         else:
-            super().handle(obj, event)
+            # print("Передаю на выполнение ", type(self.next_handler))
+            return super().handle(obj, event)
 
 
 class StrHandler(NullHandler):
     def handle(self, obj, event):
-        if isinstance(event, SetEvent) and type(event.value_or_type) is str:
+        if isinstance(event, EventSet) and type(event.value_or_type) is str:
             obj.string_field = event.value_or_type
-        elif isinstance(event, GetEvent) and event.value_or_type is str:
-            return event.value_or_type
+        elif isinstance(event, EventGet) and event.value_or_type is str:
+            return obj.string_field
         else:
-            super().handle(obj, event)
+            # print("Передаю на выполнение ", type(self.next_handler))
+            return super().handle(obj, event)
