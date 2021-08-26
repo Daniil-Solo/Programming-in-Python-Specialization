@@ -49,3 +49,4 @@ ____
 5. [Pattern Adapter](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/5_adapter_pattern) - *код содержит результаты использования паттерна Адаптер*
 6. [Pattern Observer](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/6_observer_pattern) - *код содержит результаты использования паттерна Наблюдатель*
 7. [Pattern Chain of responibility](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/7_chain_of_responibility_pattern) - *код содержит результаты использования паттерна Цепочка обязанностей*
+8. [Pattern Abstract Factory](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/8_abstract_factory_pattern) - *код содержит результаты использования паттерна Абстрактная фабрика*
