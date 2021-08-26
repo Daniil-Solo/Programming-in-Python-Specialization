@@ -48,3 +48,6 @@ chain = IntHandler(FloatHandler(StrHandler(NullHandler)))
 >>> chain.handle(obj, EventGet(str))
 'new text'
 ```
+
+## Особенности реализации
+В файле main.py содержится код для тестирования
