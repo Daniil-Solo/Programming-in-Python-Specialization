@@ -40,7 +40,8 @@ ____
 > Курс возводит слушателя от написания простых конкретных классов к профессиональному конструированию приложения в объектно-ориентированной парадигме. Паттерны проектирования позволяют шагнуть за пределы простого использования синтаксических конструкций языка. Вы научитесь писать красиво и элегантно, будете использовать проверенные временем концепции и создавать масштабируемые программы.
 ### 2.2. Получаемые знания и навыки
 + Структурное программирование, OOP, SOLID
-+ Библиотеки: unittest, PyContracts, pygame
++ Паттерны: Декоратор, Адаптер, Наблюдатель, Цепочка обязанностей, Абстрактная фабрика
++ Библиотеки: unittest, PyContracts, pygame, PyYAML
 ### 2.3. Домашние задания и проекты
 1. [Unittests for factorize-function](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/1_factorize_unittest/test_factorize.py) - *код содержит класс для юниттестов функции, возвращающей множители числа*
 2. [Creating base class](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/2_create_base_class) - *код содержит базовый класс и обновленные классы-потомки*
@@ -50,3 +51,4 @@ ____
 6. [Pattern Observer](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/6_observer_pattern) - *код содержит результаты использования паттерна Наблюдатель*
 7. [Pattern Chain of responibility](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/7_chain_of_responibility_pattern) - *код содержит результаты использования паттерна Цепочка обязанностей*
 8. [Pattern Abstract Factory](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/8_abstract_factory_pattern) - *код содержит результаты использования паттерна Абстрактная фабрика*
+9. [Configs with using Yaml](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/9_yaml) - *код содержит результаты использования Yaml-конфигов*
