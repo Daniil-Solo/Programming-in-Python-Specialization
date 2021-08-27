@@ -1,46 +1,15 @@
-# Парсинг YAML-файла
-Необходимо модифицировать приложенный код так, чтобы  два следующих кода были эквивалентны (приводили к одинаковому результату)
-```Python
-Levels = yaml.load(
-'''
-levels:
-    - !easy_level {}
-    - !medium_level
-        enemy: ['rat']
-    - !hard_level
-        enemy:
-            - rat
-            - snake
-            - dragon
-        enemy_count: 10
-''')
-```
-
-```Python
-Levels = {'levels':[]}
-_map = EasyLevel.Map()
-_obj = EasyLevel.Objects()
-Levels['levels'].append({'map': _map, 'obj': _obj})
-
-_map = MediumLevel.Map()
-_obj = MediumLevel.Objects()
-_obj.config = {'enemy':['rat']}
-Levels['levels'].append({'map': _map, 'obj': _obj})
-
-_map = HardLevel.Map()
-_obj = HardLevel.Objects()
-_obj.config = {'enemy': ['rat', 'snake', 'dragon'], 'enemy_count': 10}
-Levels['levels'].append({'map': _map, 'obj': _obj})
-```
-
-## Исходный код
-```Python
 import random
 import yaml
 from abc import ABC
 
 
 class AbstractLevel(yaml.YAMLObject):
+    @classmethod
+    def from_yaml(cls, loader, node):
+        _map = cls.Map()
+        _obj = cls.Objects()
+        _obj.config = node
+        return {'map': _map, 'obj': _obj}
 
     @classmethod
     def get_map(cls):
@@ -165,8 +134,3 @@ class HardLevel(AbstractLevel):
                     self.objects.append((obj_name, coord))
 
             return self.objects
-
-```
-
-## Особенности реализации
-Для запуска использовать main.py, там содержится добавление методов from_yaml для каждой фабрики
