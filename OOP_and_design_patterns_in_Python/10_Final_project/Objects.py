@@ -18,6 +18,12 @@ class Interactive(ABC):
         pass
 
 
+class AbstractObject(ABC):
+    @abstractmethod
+    def draw(self, display):
+        pass
+
+
 class Ally(AbstractObject, Interactive):
 
     def __init__(self, icon, action, position):
@@ -27,6 +33,7 @@ class Ally(AbstractObject, Interactive):
 
     def interact(self, engine, hero):
         self.action(engine, hero)
+
 
 
 class Creature(AbstractObject):
@@ -125,5 +132,66 @@ class Effect(Hero):
         pass
 
 
-# FIXME
-# add classes
+class Berserk(Effect):
+    def __init__(self, base):
+        super().__init__(base)
+
+    def apply_effect(self):
+        changing_stats = {
+            "HP": 50,  # health points
+            "Strength": 7,  # сила
+            "Perception": -3,  # восприятие
+            "Endurance": 7,  # выносливость
+            "Charisma": -3,  # харизма
+            "Intelligence": -3,  # интеллект
+            "Agility": 7,  # ловкость
+            "Luck": 7  # удача
+        }
+        for key in changing_stats:
+            self.stats[key] += changing_stats[key]
+
+
+class Blessing(Effect):
+    def __init__(self, base):
+        super().__init__(base)
+
+    def apply_effect(self):
+        changing_stats = {
+            "HP": 2,  # health points
+            "MP": 2,  # magic points,
+            "SP": 2,  # skill points
+            "Strength": 2,  # сила
+            "Perception": 2,  # восприятие
+            "Endurance": 2,  # выносливость
+            "Charisma": 2,  # харизма
+            "Intelligence": 2,  # интеллект
+            "Agility": 2,  # ловкость
+            "Luck": 2  # удача
+        }
+        for key in changing_stats:
+            self.stats[key] += changing_stats[key]
+
+
+class Blessing(Effect):
+    def __init__(self, base):
+        super().__init__(base)
+
+    def apply_effect(self):
+        changing_stats = {
+            "Strength": 4,  # сила
+            "Endurance": 4,  # выносливость
+            "Agility": 4,  # ловкость
+        }
+        for key in changing_stats:
+            self.stats[key] += changing_stats[key]
+
+
+class Enemy(Creature, Interactive):
+    def __init__(self, icon, stats, xp, position):
+        self.icon = icon
+        self.stats = stats
+        self.xp = xp
+        self.position = position
+
+    def interact(self, engine, hero):
+        pass

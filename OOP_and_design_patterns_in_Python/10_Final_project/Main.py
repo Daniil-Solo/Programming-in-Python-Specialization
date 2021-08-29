@@ -5,7 +5,6 @@ import ScreenEngine
 import Logic
 import Service
 
-
 SCREEN_DIM = (800, 600)
 
 pygame.init()
@@ -15,6 +14,7 @@ KEYBOARD_CONTROL = True
 
 if not KEYBOARD_CONTROL:
     import numpy as np
+
     answer = np.zeros(4, dtype=float)
 
 base_stats = {
@@ -23,6 +23,7 @@ base_stats = {
     "intelligence": 5,
     "luck": 5
 }
+global hero, engine, drawer, iteration
 
 
 def create_game(sprite_size, is_new):
