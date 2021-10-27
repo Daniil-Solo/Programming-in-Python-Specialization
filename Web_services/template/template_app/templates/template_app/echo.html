@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Echo</title>
+</head>
+<body>
+<h3>{{method}}</h3>
+<ul>
+{% for key, value in response.items %}
+    {{ key }}: {{ value }}
+{% endfor %}
+</ul>
+<hr>
+{{header}}
+</body>
+</html>
