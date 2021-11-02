@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block mainmenu %}
+<h1>{{table_name}}</h1>
+<ul>
+{% for jew in jews %}
+<li>
+    <p>{{jew.title}}</p>
+    <p>Цена: {{jew.price}}</p>
+    <a href="/home/table/{{jew.pk}}/"><button>Подробнее</button></a>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}
