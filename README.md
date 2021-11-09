@@ -10,7 +10,7 @@
 ### 1.3. Состав специализации
 1. [**Погружение в Python**](#diving_in_python)([Ссылка на курс](https://www.coursera.org/learn/diving-in-python?specialization=programming-in-python))
 2. [**ООП и паттерны проектирования в Python**](#oop_and_pattern)([Ссылка на курс](https://www.coursera.org/learn/oop-patterns-python))
-3. **Создание Web-сервисов на Python**
+3. [**Создание Web-сервисов на Python**](#web_services)([Ссылка на курс](https://www.coursera.org/learn/python-for-web))
 4. **Python для анализа данных**
 ### 1.3. Описание программы
 > Программа состоит из четырех курсов, каждый из которых раскрывает определенную тему в Python. Сначала вы научитесь основным конструкциям языка и другим особенностям программирования на Python, далее углубитесь в объектно-ориентированное программирование. Научитесь создавать веб-сервисы и проводить анализ данных. Программа подойдет для студентов и профессионалов с начальными навыками программирования.
@@ -36,13 +36,13 @@ ____
 9. [Descriptor with comission](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/blob/main/Diving%20in%20Python/9_Descriptor_with_commission.py) - *код содержит класс дескриптора для вычета комиссии из установленного значения суммы*
 10. [Metrics collection and storage system](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/Diving%20in%20Python/10_Final_project) - *ассинхронный сервер для хранения метрик и ассинхронный клиент для отправки метрик*
 ## **3. ООП и паттерны проектирования в Python** <a name="oop_and_pattern"></a>
-### 2.1. Описание программы
+### 3.1. Описание программы
 > Курс возводит слушателя от написания простых конкретных классов к профессиональному конструированию приложения в объектно-ориентированной парадигме. Паттерны проектирования позволяют шагнуть за пределы простого использования синтаксических конструкций языка. Вы научитесь писать красиво и элегантно, будете использовать проверенные временем концепции и создавать масштабируемые программы.
-### 2.2. Получаемые знания и навыки
+### 3.2. Получаемые знания и навыки
 + Структурное программирование, OOP, SOLID
 + Паттерны: Декоратор, Адаптер, Наблюдатель, Цепочка обязанностей, Абстрактная фабрика
 + Библиотеки: unittest, PyContracts, pygame, PyYAML
-### 2.3. Домашние задания и проекты
+### 3.3. Домашние задания и проекты
 1. [Unittests for factorize-function](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/1_factorize_unittest/test_factorize.py) - *код содержит класс для юниттестов функции, возвращающей множители числа*
 2. [Creating base class](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/2_create_base_class) - *код содержит базовый класс и обновленные классы-потомки*
 3. [Creating class hierarchies](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/3_create_class_hierarchies) - *код содержит результаты перехода программы с процедурного стиля на ООП*
@@ -52,3 +52,14 @@ ____
 7. [Pattern Chain of responibility](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/7_chain_of_responibility_pattern) - *код содержит результаты использования паттерна Цепочка обязанностей*
 8. [Pattern Abstract Factory](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/8_abstract_factory_pattern) - *код содержит результаты использования паттерна Абстрактная фабрика*
 9. [Configs with using Yaml](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/OOP_and_design_patterns_in_Python/9_yaml) - *код содержит результаты использования Yaml-конфигов*
+## **4. Создание Web-сервисов на Python** <a name="web_services"></a>
+### 4.1. Описание программы
+> В данном курсе вы сможете приобрести как базовые знания о функционировании современного интернета в целом, так и практические навыки создания интернет-приложений на языке Python.
+### 4.2. Получаемые знания и навыки
++ requests, bs4
++ django
+### 4.3. Домашние задания и проекты
+1. [Routing](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/Web_services/routing) - *код содержит результаты использования марщрутов*
+2. [Template](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/Web_services/template) - *код содержит резульатты применения шаблонов, фильтров, тегов*
+3. [Table](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/Web_services/test_table) - *код содержит результаты использования миграций (не относится к курсу)*
+4. [Stackoverflow](https://github.com/Daniil-Solo/Programming-in-Python-Specialization/tree/main/Web_services/stackoverflow) - *код содержит верстку страницы для вопроса со Stackverflow*
