@@ -1,0 +1,141 @@
+body{
+    width: 90%;
+    margin: auto;
+    padding: 0px;
+}
+.container{
+    display: flex;
+}
+
+.container-header{
+    background-color: #c0c0c0;
+    margin-bottom: 10px;
+}
+.logo{
+    vertical-align: middle;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px 20px
+}
+.search{
+    vertical-align: middle;
+    border: 0px;
+    outline:none;
+}
+.best_members a, .text_message a, .account a{
+    vertical-align: middle;
+    margin-right: 10px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.avatar{
+    margin: 15px 15px 5px 15px;
+}
+.question__avatar{
+    width: 120px;
+    border-radius: 20%;
+}
+.answer__avatar{
+    width: 80px;
+    border-radius: 20%;
+}
+p {
+    font-style: italic;
+}
+.question{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #c0c0c0;
+}
+.your_answer{
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-top-color: #c0c0c0;
+}
+.messages{
+    width: 85%;
+}
+.card{
+    display: flex;
+    background-color: #c0c0c0;
+    margin: 20px 10px;
+    border-radius: 20px;
+}
+
+.card-answer{
+    display: flex;
+    flex-direction: column;
+    background-color: #c0c0c0;
+    margin: 20px 10px;
+    border-radius: 20px;
+}
+
+.sidebar_message *{
+     display: flex;
+     flex-direction: vertical;
+}
+.sidebar_message input{
+    margin: 5px auto;
+    width: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.sidebar_message .btn{
+    margin: 10px 10px;
+    width: 80px;
+}
+h1 {color: blue}
+
+.your_answer__textarea{
+    resize: none;
+    margin: 10px 10px;
+    border-radius: 20px;
+    height: 100px;
+    border: none;
+    outline: none;
+}
+
+.send_btn{
+    margin: 0px auto 10px auto;
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.send_btn:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+
+.sidebar{
+    background-color: #c0c0c0;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px;
+    width: 15%;
+}
+
+.best_members, .popular_tags{
+    text-align: center;
+}
+
+h2{
+    margin-bottom: 10px;
+    font-style:italic;
+}
+
+.no-ads{
+    background-color: #c0c0c0;
+    border-radius: 20px;
+    margin: 0px 10px 20px 10px;
+    height: 30px;
+    text-align: center;
+}

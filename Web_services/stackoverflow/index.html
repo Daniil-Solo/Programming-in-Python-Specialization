@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Stackoverflow</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="container-header">
+                <span class="logo">Переполнение стека</span>
+                <input class="search" type="text" placeholder="Искать">
+                <div class="account" style="float:right">
+                    <a href="#">Войти</a>
+                    <a href="#">Регистрация</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="messages">
+                <div class="question">
+                    <div class="card">
+                        <div class="sidebar_message">
+                            <img class="question__avatar avatar" src="avatar1.jpg" alt="аватар">
+                            <input type="number" value="10">
+                        </div>
+                        <div class="text_message">
+                            <h3>Почему работодатели такие злые?</h3>
+                            <p>Всем привет. Прошел 100500 курсов, а на работу до сих пор не принимают, потому что опыта нет. </p>
+                            <p>Теги: <a href="#">вопросы</a> <a href="#">работа</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="answer">
+                    <div class="card">
+                        <div class="sidebar_message">
+                            <img class="answer__avatar  avatar" src="avatar2.jpg" alt="аватар">
+                            <input type="number" value="6">
+                        </div>
+                        <div class="text_message">
+                            <p>Можете начать с фриланса. Он котируется как коммерческий опыт)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="answer">
+                    <div class="card">
+                        <div class="sidebar_message">
+                            <img class="answer__avatar  avatar" src="avatar3.jpg" alt="аватар">
+                            <input type="number" value="1">
+                        </div>
+                        <div class="text_message">
+                            <p>Та же проблема была у меня не так давною Сейчас очень много молодняков. Большая конкуренция везде. Ищите опыт, делайте pet-преокты, не сидите на месте.</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="your_answer" action="#">
+                    <div class="card-answer">
+                        <textarea class="your_answer__textarea"></textarea>
+                        <input class="send_btn" type="submit" value="Ответить">
+                    </div>
+                </form>
+            </div>
+            <div class="sidebar">
+                <div class="popular_tags">
+                    <h2>Популярные теги</h2>
+                    <p><code>
+                        coursera python mysql django
+                    </code></p>
+                </div>
+                <div class="best_members">
+                    <h2>Знатоки</h2>
+                    <a href="#">Кот морковкин</a><br>
+                    <a href="#">Супермен</a><br>
+                    <a href="#">Генадий</a><br>
+                    <a href="#">Петр I</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="no-ads">
+                Здесь могла быть ваша реклама :(
+            </p>
+        </footer>
+    </body>
+</html>
